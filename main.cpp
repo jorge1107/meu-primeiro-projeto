@@ -1,5 +1,6 @@
 #include <iostream>
 
+// Função que calcula o fatorial de um número
 long long fatorial(int n) {
     if (n < 0) return 0;
     long long f = 1;
@@ -9,20 +10,24 @@ long long fatorial(int n) {
     return f;
 }
 
+// Função que realiza o cálculo do valor de uma permutação simples
 long long permutacao(int n) {
     return fatorial(n);
 }
 
+// Função que realiza o cálculo do valor de uma combinação
 long long combinacao(int n, int k) {
     if (k < 0 || k > n) return 0;
     return fatorial(n) / (fatorial(k) * fatorial(n - k));
 }
 
+// Função que calcula o valor de um arranjo
 long long arranjo(int n, int k) {
     if (k < 0 || k > n) return 0;
     return fatorial(n) / fatorial(n - k);
 }
 
+// Interface a qual o usuário interage
 void analiseCombinatoria() {
     int s = 0;
     int n, k;
@@ -77,9 +82,10 @@ int main() {
         std::cin >> continuar;
 
         // O loop continua se o utilizador digitar 's' ou 'S'
-    } while (continuar == 's' || continuar == 'S');
+    } while (continuar == 's' || continuar == 'S' || continuar == 'y' || continuar == 'Y');
 
     std::cout << "Programa encerrado." << std::endl;
 
     return 0;
+
 }
